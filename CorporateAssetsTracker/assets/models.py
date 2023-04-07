@@ -5,9 +5,9 @@ from django.utils import timezone   # to ensure that dates and times are accurat
 # Create your models here.
 class Company(models.Model):
     company_name = models.CharField(max_length=255)
-    email = models.EmailField()
-    phone = models.CharField(max_length=20)
-    address = models.TextField()
+    email = models.EmailField(null=True)
+    phone = models.CharField(max_length=20, null=True)
+    address = models.TextField(max_length=150, null=True)
     
     def __str__(self):
         return self.company_name
@@ -15,9 +15,10 @@ class Company(models.Model):
 
 class Employee(models.Model):
     employee_name = models.CharField(max_length=255)
-    email = models.EmailField()
-    phone = models.CharField(max_length=20)
+    email = models.EmailField(null=True)
+    phone = models.CharField(max_length=20, null=True)
     company = models.ForeignKey(Company, on_delete=models.CASCADE)    
+
     def __str__(self):
         return self.employee_name
 
