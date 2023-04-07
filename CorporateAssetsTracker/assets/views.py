@@ -1,9 +1,8 @@
 # from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
-
 from .models import Company, Employee, Device, DeviceLog
-from .serializers import CompanySerializer, EmployeeSerializer, DeviceSerializer, DeviceLogSerializer
+from .serializer import CompanySerializer, EmployeeSerializer, DeviceSerializer, DeviceLogSerializer
 
 
 class CompanyViewSet(viewsets.ModelViewSet):

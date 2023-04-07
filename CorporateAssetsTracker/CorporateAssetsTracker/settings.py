@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # register apps
     'assets',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
